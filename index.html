@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angel's Kitchen — Menu</title>
+<meta name="description" content="The official website to order food from Angel Ramsay.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #1c1815;
+    --surface: #24201b;
+    --surface-hover: #2b2620;
+    --text: #f5efe3;
+    --text-muted: #b7ab97;
+    --saffron: #e3a23c;
+    --rust: #a34732;
+    --divider: #3c352c;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Work Sans', sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: inherit; }
+
+  .wrap{
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- Header ---------- */
+
+  header.hero{
+    padding: 88px 0 64px;
+    text-align: center;
+    border-bottom: 1px solid var(--divider);
+  }
+
+  .kicker{
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: var(--saffron);
+    letter-spacing: 0.02em;
+    margin: 0 0 14px;
+  }
+
+  h1.title{
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    line-height: 1.02;
+    margin: 0 0 22px;
+    letter-spacing: -0.01em;
+  }
+
+  .underline{
+    display: block;
+    width: 220px;
+    height: 18px;
+    margin: 0 auto 26px;
+  }
+
+  .underline path{
+    fill: none;
+    stroke: var(--saffron);
+    stroke-width: 4;
+    stroke-linecap: round;
+  }
+
+  .lede{
+    max-width: 480px;
+    margin: 0 auto;
+    color: var(--text-muted);
+    font-size: 1.08rem;
+  }
+
+  /* ---------- Menu ---------- */
+
+  main{ padding: 72px 0 100px; }
+
+  .category{
+    margin-bottom: 68px;
+  }
+  .category:last-child{ margin-bottom: 0; }
+
+  .category-head{
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin-bottom: 30px;
+  }
+
+  .category-head h2{
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.7rem;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .category-head .rule{
+    flex: 1;
+    height: 1px;
+    background: var(--divider);
+  }
+
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .dish{
+    background: var(--surface);
+    border: 1px solid var(--divider);
+    border-radius: 4px;
+    padding: 22px 20px;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  .dish:hover{
+    background: var(--surface-hover);
+    border-color: var(--saffron);
+  }
+
+  .dish-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .dish-name{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.08rem;
+  }
+
+  .dish-price{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    color: var(--saffron);
+    white-space: nowrap;
+    font-size: 0.98rem;
+  }
+
+  .dish-desc{
+    color: var(--text-muted);
+    font-size: 0.93rem;
+    margin: 0;
+  }
+
+  .tag{
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.72rem;
+    color: var(--rust);
+    border: 1px solid var(--rust);
+    border-radius: 100px;
+    padding: 2px 9px;
+  }
+
+  /* ---------- Footer ---------- */
+
+  footer{
+    border-top: 1px solid var(--divider);
+    padding: 40px 0 56px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  footer p{ margin: 6px 0; }
+
+  @media (max-width: 780px){
+    .grid{ grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 540px){
+    header.hero{ padding: 64px 0 48px; }
+    .grid{ grid-template-columns: 1fr; }
+    .category-head h2{ font-size: 1.4rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    .dish{ transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Angel Ramsay's dining room</p>
+    <h1 class="title">Angel's Kitchen</h1>
+    <svg class="underline" viewBox="0 0 220 18" aria-hidden="true">
+      <path d="M4 12 C 40 4, 80 16, 112 9 S 190 3, 216 10"/>
+    </svg>
+    <p class="lede">The official website to order food from Angel Ramsay.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="category" aria-labelledby="starters">
+    <div class="category-head">
+      <h2 id="starters">Week 1 Menu</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="grid">
+      <article class="dish">
+        <div class="dish-row">
+          <span class="dish-name">Rich and Fatty</span>
+          <span class="dish-price">$9.9</span>
+        </div>
+        <p class="dish-desc">The flavour everyone loves and grows up with. Come in 100% freshness.</p>
+      </article>
+      <article class="dish">
+        <div class="dish-row">
+          <span class="dish-name">Sour & Tangy</span>
+          <span class="dish-price">$10.9</span>
+        </div>
+        <p class="dish-desc">The flavour that will make your mouth dripping.</p>
+      </article>
+      <article class="dish">
+        <div class="dish-row">
+          <span class="dish-name">Spice on top</span>
+          <span class="dish-price">$11.9</span>
+        </div>
+        <p class="dish-desc">It feels so hot in here. Is it me, or is it the dish? Comes with the "OJ option".</p>
+        <span class="tag">Spicy</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="category" aria-labelledby="mains">
+    <div class="category-head">
+      <h2 id="mains">Week 2 Menu</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="grid">
+      <article class="dish">
+        <div class="dish-row">
+          <span class="dish-name">TBD</span>
+          <span class="dish-price">TBD</span>
+        </div>
+        <p class="dish-desc">TBD</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="category" aria-labelledby="desserts">
+    <div class="category-head">
+      <h2 id="desserts">Week 3 Menu</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="grid">
+      <article class="dish">
+        <div class="dish-row">
+          <span class="dish-name">TBD</span>
+          <span class="dish-price">TBD</span>
+        </div>
+        <p class="dish-desc">TBD</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="category" aria-labelledby="drinks">
+    <div class="category-head">
+      <h2 id="drinks">Week 4 Menu</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="grid">
+      <article class="dish">
+        <div class="dish-row">
+          <span class="dish-name">TBD</span>
+          <span class="dish-price">TBD</span>
+        </div>
+        <p class="dish-desc">TBD</p>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Angel's Kitchen · menu for viewing only, no online ordering yet.</p>
+    <p>Prices and availability may change without notice.</p>
+  </div>
+</footer>
+
+</body>
+</html>
